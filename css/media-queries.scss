@@ -1,0 +1,62 @@
+@import 'globals';
+
+@media screen and (min-width: 900px) {
+
+    // *********************************************************
+    //      Blog
+    .post, .post-navigation, #comments{
+        padding: 0 (115px + $gutter) 0 0;
+    }
+    
+    .post{
+        @include box-shadow(none);
+        background: none;
+        position: relative;
+
+        .entry{
+            @include bubble;
+            padding: 30px;
+        }
+        
+        .postmeta{
+            border: 0 none;
+            color: $normal_text;
+            font-family: $crimson;
+            font-size: 24px;
+            margin: ($gutter + px) 0 0;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 115px;
+            
+            time{
+                background: url(images/black-border.png) center bottom repeat-x;
+                display: block;
+                font-style: italic;
+                line-height: 1;
+                padding-bottom: 10px;
+                margin-bottom: 10px;
+            }
+            
+            .month{
+                display: block;
+            }
+            
+            .categories{
+                font-family: $helvetica;
+                margin: 0;
+                
+                li{
+                    display: block;
+                    margin: 0;
+                }
+                
+                a{
+                    display: block;
+                    padding: 4px 0;
+                }
+            }
+        }
+    }
+} // 1000px
