@@ -33,7 +33,7 @@
     	dynamic_sidebar( 'single-sidebar' );
     }
     elseif(is_front_page() || is_archive()){
-    	dynamic_sidebar( 'blog-sidebar' );
+    	dynamic_sidebar( 'shaken-blog-sidebar' );
     }
     elseif(is_page_template('template-unique-sidebar.php')){
     	dynamic_sidebar( 'unique-sidebar' );

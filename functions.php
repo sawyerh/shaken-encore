@@ -118,7 +118,7 @@ body {background:none; <?php echo trim( $style ); ?> }
 function shaken_register_sidebars(){
 	register_sidebar(array(
 		'name'=> __('Blog Sidebar'),
-		'id' => 'blog-sidebar',
+		'id' => 'shaken-blog-sidebar',
 		'description' => __('Displayed on the blog and archive pages'),
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
@@ -133,6 +133,15 @@ function shaken_register_menus(){
 		'main_menu' => __( 'Main Menu'),
 	) );	
 }
+
+// --------------  Unegister Widgets -------------- 
+function unregister_default_wp_widgets() {
+	unregister_widget('WP_Widget_Calendar');
+	unregister_widget('WP_Widget_Links');
+	unregister_widget('WP_Widget_Meta');
+	unregister_widget('WP_Widget_Tag_Cloud');
+}
+add_action('widgets_init', 'unregister_default_wp_widgets', 1);
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -206,7 +215,7 @@ function shaken_next_posts_link_class(){
     return 'class="old"';
 }
 
-require( TEMPLATEPATH . '/audiotheme/audiotheme.php' );
+require( TEMPLATEPATH . '/audiotheme-framework/audiotheme.php' );
 require( $functions_path.'audiotheme-setup.php' );
 require( $functions_path.'custom-functions.php' );
 

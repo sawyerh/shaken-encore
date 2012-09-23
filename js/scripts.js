@@ -132,9 +132,7 @@ jQuery.fn.quickEach = (function() {
         $('p.song-title', $(myself).next()).html(title);
     }
     
-    function equalHeights(){
-        // We would do min-height, but Firefox has a bug that doesn't play nice with box-sizing: border-box
-        
+    function equalHeights(){        
         // Sidebar
         var sidebar_height = $('.sidebar').height(),
             $page = $('section.page'),
@@ -153,9 +151,9 @@ jQuery.fn.quickEach = (function() {
                 entry_height = $('.entry', this).height();
             
             if( meta_height > entry_height ){
-                $('.entry').css('height', meta_height);
+                $('.entry').css('minHeight', meta_height);
             } else {
-                $('.entry').css('height', 'auto');
+                $('.entry').css('minHeight', 'auto');
             }
         });
     }
