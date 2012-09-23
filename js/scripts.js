@@ -27,6 +27,8 @@ jQuery.fn.quickEach = (function() {
     });
     
     $('#tabs').tabs();
+
+    $('.video-flex').fitVids();
     
     $('.thumb').fancybox({
         'overlayColor': '#000',

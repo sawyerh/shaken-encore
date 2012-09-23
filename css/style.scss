@@ -109,8 +109,10 @@ a{
 }
 
 .button.primary, input[type="submit"]{
+    @include box-shadow(none);
     background: $emphasis_bg_color;
-    border-color: darken($emphasis_bg_color, 20%);
+    border: 1px solid darken($emphasis_bg_color, 20%);
+    text-shadow: none;
     
     &:hover{
         background: darken($emphasis_bg_color, 7%);
