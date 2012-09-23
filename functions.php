@@ -215,6 +215,11 @@ function shaken_next_posts_link_class(){
     return 'class="old"';
 }
 
+if ( ! defined( 'AUDIOTHEME_DIR' ) )
+  define( 'AUDIOTHEME_DIR', get_template_directory() . '/audiotheme-framework/' );
+if ( ! defined( 'AUDIOTHEME_URI' ) )
+  define( 'AUDIOTHEME_URI', get_template_directory_uri() . '/audiotheme-framework/' );
+
 require( TEMPLATEPATH . '/audiotheme-framework/audiotheme.php' );
 require( $functions_path.'audiotheme-setup.php' );
 require( $functions_path.'custom-functions.php' );
