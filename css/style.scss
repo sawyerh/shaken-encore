@@ -43,6 +43,7 @@ body{
     @include clearfix;
     width: 90%;
     max-width: 1200px;
+    min-width: 860px;
     margin: 60px auto;
 }
 

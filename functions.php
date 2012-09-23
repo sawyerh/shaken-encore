@@ -26,7 +26,6 @@ function shaken_setup() {
 		add_editor_style();
 		add_theme_support( 'automatic-feed-links' );
 		add_custom_background('shaken_custom_background_cb');
-		add_theme_support( 'post-formats', array( 'image', 'video', 'audio', 'quote', 'link', 'gallery' ) );
 		
 		// Set featured image sizes
 		add_theme_support('post-thumbnails');
@@ -46,13 +45,10 @@ function shaken_setup() {
 		// Threaded comments
 		add_action('get_header', 'shaken_enable_threaded_comments');
 		
-		// Setup the custom stylesheet used in the Theme Options
-		//add_action( 'parse_request', 'shaken_custom_styles' );
+		// Disable some widgets
+		add_action('widgets_init', 'unregister_default_wp_widgets', 1);
 	
 	// Filters
-	
-		// Show home link in wp_nav_menu() fallback
-		add_filter( 'wp_page_menu_args', 'shaken_page_menu_args' );
 		
 		// Add featured images to RSS feed
 		add_filter('pre_get_posts','shaken_feedFilter');
@@ -140,19 +136,6 @@ function unregister_default_wp_widgets() {
 	unregister_widget('WP_Widget_Links');
 	unregister_widget('WP_Widget_Meta');
 	unregister_widget('WP_Widget_Tag_Cloud');
-}
-add_action('widgets_init', 'unregister_default_wp_widgets', 1);
-
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- *
- * To override this in a child theme, remove the filter and optionally add
- * your own function tied to the wp_page_menu_args filter hook.
- *
- */
-function shaken_page_menu_args( $args ) {
-	$args['show_home'] = true;
-	return $args;
 }
 
 // smart jquery inclusion

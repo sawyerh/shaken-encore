@@ -13,6 +13,8 @@
         if( $release_date ) $metadata['release_date'] = $release_date;
         if( $artist ) $metadata['artist'] = $artist;
         if( $genre ) $metadata['genre'] = $genre;
+
+        $links = get_audiotheme_record_links( $post->ID );
     ?>
         <section id="post-<?php the_ID(); ?>" <?php post_class( 'page page-wrap' ); ?>>
             
@@ -35,7 +37,9 @@
                 <?php } ?>
 
 	            <div class="buttons">
-                    <a href="#" class="button">Download Album</a>
+                    <?php foreach ($links as $l){ ?>
+                        <a href="<?php echo $l['url'] ?>" class="button"><?php echo $l['name'] ?></a>
+                    <?php } ?>
 
                     <span class="button show-share-button">Share</span>
                     <?php global $shaken_share_buttons; $shaken_share_buttons = true; ?>
@@ -59,7 +63,6 @@
         	<div id="tabs">
                 <ul class="tab-nav">
                     <?php if( $tracks ) { ?><li><a href="#tracklist-tab">Tracklist</a></li><?php } ?>
-                    <li><a href="#photos-tab">Photos</a></li>
                 </ul>
                 
                 <?php if( $tracks ) { ?>
@@ -67,10 +70,6 @@
                     <?php get_audio_player( $post->ID, false, 'single' ); ?>
                 </div><!-- #tracklist -->
                 <?php } ?>
-                    
-                <div id="photos-tab" class="media-tab">
-                    <a href="http://designers.mx/content/uploads/album_covers/cca5d6eb31280272871b8b0c25b10fe4.jpg" class="thumb" rel="photos"><img src="http://27.media.tumblr.com/tumblr_lxh5pqkNyO1qbvzlwo1_400.png" /></a>
-                </div><!-- #photos -->
             </div><!-- #tabs -->
         </section>
 	<?php endwhile; endif; ?>
