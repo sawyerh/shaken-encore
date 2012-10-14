@@ -1,0 +1,3 @@
+[submodule "audiotheme-framework"]
+	path = audiotheme-framework
+	url = https://github.com/thelukemcdonald/audiotheme-framework.git
