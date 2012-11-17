@@ -787,12 +787,12 @@ article.album{
 // *********************************************************
 //      Blog
 
-.post, article.page{
+.post, article.page, article.audiotheme_video{
     @include bubble;
     padding: 30px;
     margin-bottom: $gutter + px;
         
-    .feature-image{
+    .feature-image, .video{
         display: block;
         margin-bottom: 20px;
         text-align: center;

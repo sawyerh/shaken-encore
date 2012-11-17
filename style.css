@@ -1114,7 +1114,7 @@ article.album {
     position: relative;
     z-index: 10; }
 
-.post, article.page {
+.post, article.page, article.audiotheme_video {
   -webkit-background-clip: padding;
   -webkit-background-clip: padding-box;
   -webkit-border-radius: 4px;
@@ -1130,37 +1130,37 @@ article.album {
   background: #fff;
   padding: 30px;
   margin-bottom: 30px; }
-  .post .feature-image, article.page .feature-image {
+  .post .feature-image, .post .video, article.page .feature-image, article.page .video, article.audiotheme_video .feature-image, article.audiotheme_video .video {
     display: block;
     margin-bottom: 20px;
     text-align: center; }
-    .post .feature-image:hover, article.page .feature-image:hover {
+    .post .feature-image:hover, .post .video:hover, article.page .feature-image:hover, article.page .video:hover, article.audiotheme_video .feature-image:hover, article.audiotheme_video .video:hover {
       background: none; }
-  .post h1, article.page h1 {
+  .post h1, article.page h1, article.audiotheme_video h1 {
     font-size: 48px; }
-    .post h1 a, article.page h1 a {
+    .post h1 a, article.page h1 a, article.audiotheme_video h1 a {
       text-decoration: none; }
-  .post p:last-child, article.page p:last-child {
+  .post p:last-child, article.page p:last-child, article.audiotheme_video p:last-child {
     margin-bottom: 0; }
-  .post .postmeta, article.page .postmeta {
+  .post .postmeta, article.page .postmeta, article.audiotheme_video .postmeta {
     border-top: 1px solid #cccccc;
     color: #444444;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 12px;
     margin-top: 15px;
     padding-top: 15px; }
-    .post .postmeta a, article.page .postmeta a {
+    .post .postmeta a, article.page .postmeta a, article.audiotheme_video .postmeta a {
       color: #444444; }
-      .post .postmeta a:hover, article.page .postmeta a:hover {
+      .post .postmeta a:hover, article.page .postmeta a:hover, article.audiotheme_video .postmeta a:hover {
         background: none; }
-        .post .postmeta a:hover span, article.page .postmeta a:hover span {
+        .post .postmeta a:hover span, article.page .postmeta a:hover span, article.audiotheme_video .postmeta a:hover span {
           background: #ffe58d; }
-  .post .categories, article.page .categories {
+  .post .categories, article.page .categories, article.audiotheme_video .categories {
     list-style: none;
     font-size: 11px;
     margin: 10px 0 0;
     padding: 0; }
-    .post .categories li, article.page .categories li {
+    .post .categories li, article.page .categories li, article.audiotheme_video .categories li {
       display: inline;
       margin-right: 10px; }
 

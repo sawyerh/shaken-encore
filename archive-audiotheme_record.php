@@ -18,6 +18,8 @@
                 <h1><?php the_title(); ?></h1>
             </a>
         </article>
-	<?php endwhile; endif; ?>
+	<?php endwhile; else: ?>
+            You haven't posted any records yet!
+        <?php endif; ?>
     </div><!-- #page -->
 <?php get_footer(); ?>
