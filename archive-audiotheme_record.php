@@ -1,9 +1,3 @@
-<?php 
-/* 
-    Template name: Record Archive 
-*/
-?>
-
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
     

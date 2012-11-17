@@ -186,6 +186,12 @@ footer.primary{
     }
 }
 
+.tagline{
+    font-family: $helvetica;
+    font-size: 12px;
+    color: $ultra_light_text;
+}
+
 // *********************************************************
 //      Audio Player
 
@@ -489,9 +495,18 @@ footer.primary{
     .logo{
         margin: 0 0 20px;
         
+        a{
+            text-decoration: none;
+        }
+
         a:hover{
             background: none;
         }
+    }
+
+    .site-title{
+        font-size: 48px;
+        margin-bottom: 5px;
     }
     
     .audio-player{

@@ -11,7 +11,7 @@ function get_shaken_footer(){ ?>
             <?php social_bartender('<li>', '</li>'); ?>
         </ul>
         <?php } ?>
-        <p class="copyright">&copy; <?php _e( 'Copyright', 'shaken' ); ?> <?php echo date('Y'); ?><br /><?php _e( 'Powered by', 'shaken' ); ?> <a href="http://www.themegarden.com/sawyer-hollenshead/shaken-tumble" target="_blank">AudioTheme</a></p>
+        <p class="copyright">&copy; <?php _e( 'Copyright', 'shaken' ); ?> <?php echo date('Y'); ?><br /><?php _e( 'Powered by', 'shaken' ); ?> <a href="http://www.audiotheme.com" target="_blank">Shaken Encore</a></p>
     </footer>
 <?php
 }

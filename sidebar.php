@@ -16,7 +16,7 @@
         </a>
         </h1>
     <?php } else { ?>
-		<h1 class="site-title logo"><?php bloginfo( 'name' ); ?></h1>
+		<h1 class="site-title logo"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
     	<p class="tagline"><?php bloginfo( 'description' ); ?></p>
     <?php } ?>
     
