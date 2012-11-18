@@ -34,7 +34,10 @@ function shaken_setup() {
 			add_image_size('album_cover', 500, 500, true);
 			add_image_size('album_cover_mini', 110, 110, true);
 			add_image_size('sidebar', 75, 75, true);
-		
+	
+	// Disable support for gigs temporarily
+		add_action( 'admin_menu', 'remove_gigs_menu', 13 );
+
 	// Actions
 	
 		/* Add your nav menus function to the 'init' action hook. */
@@ -51,9 +54,6 @@ function shaken_setup() {
 	
 	// Filters
 		
-		// Add featured images to RSS feed
-		add_filter('pre_get_posts','shaken_feedFilter');
-		
 		// Add wmode='transparent' to auto embedded Flash videos
 		add_filter('embed_oembed_html', 'add_video_wmode', 10, 3);
 		
@@ -68,6 +68,10 @@ function shaken_setup() {
 	$locale_file = TEMPLATEPATH . "/languages/$locale.php";
 	if ( is_readable( $locale_file ) )
 		require_once( $locale_file );
+}
+
+function remove_gigs_menu(){
+	remove_menu_page('gigs');
 }
 
 /** 
@@ -153,26 +157,6 @@ function shaken_enable_threaded_comments(){
 		if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1))
 			wp_enqueue_script('comment-reply');
 	}
-}
-
-// -------------- Add featured images to RSS feed --------------
-function shaken_feedContentFilter($content) {
-	$thumbId = get_post_thumbnail_id();
-
-	if($thumbId) {
-		$img = wp_get_attachment_image_src($thumbId);
-		$image = '<img src="'. $img[0] .'" alt="" width="'. $img[1] .'" height="'. $img[2] .'" />';
-		echo $image;
-	}
-	
-	return $content;
-}
-
-function shaken_feedFilter($query) {
-	if ($query->is_feed) {
-		add_filter('the_content', 'shaken_feedContentFilter');
-		}
-	return $query;
 }
 
 // Add wmode=transparent 
