@@ -30,10 +30,9 @@ jQuery.fn.quickEach = (function() {
 
     $('.video-flex').fitVids();
     
-    $('.thumb').fancybox({
-        'overlayColor': '#000',
-        'transitionIn': 'elastic',
-        'transitionOut': 'elastic'
+    $('.thumb').colorbox({
+        maxWidth: '90%',
+        maxHeight: '90%'
     });
     
     $('.show-share-button').on('click', function(){

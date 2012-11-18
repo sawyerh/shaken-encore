@@ -30,6 +30,7 @@ function shaken_setup() {
 		// Set featured image sizes
 		add_theme_support('post-thumbnails');
 			set_post_thumbnail_size(810, 1800);
+			add_image_size('archive', 500, 1800);
 			add_image_size('album_cover', 500, 500, true);
 			add_image_size('album_cover_mini', 110, 110, true);
 			add_image_size('sidebar', 75, 75, true);

@@ -3,12 +3,8 @@
     
     <div class="page-wrap">
         <?php 
-        $video_query = array(
-            'post_type' => 'audiotheme_video',
-            'posts_per_page' => -1
-        );
-        $videos = new WP_Query( $video_query );
-        if( $videos->have_posts() ): while ( $videos->have_posts() ) : $videos->the_post(); 
+        query_posts('posts_per_page=-1&post_type=audiotheme_video');
+        if( have_posts() ): while ( have_posts() ) : the_post(); 
         ?>
             <article class="album">
                 <?php if( get_the_audiotheme_post_video() ){

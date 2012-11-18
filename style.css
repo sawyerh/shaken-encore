@@ -1054,6 +1054,8 @@ body.page-template-template-home-php footer.primary {
     left: 0;
     right: 0;
     top: 70px; }
+    .primary-nav li > ul ul {
+      display: none !important; }
     .primary-nav li > ul a {
       padding: 5px 0; }
     .primary-nav li > ul li {
@@ -1114,7 +1116,7 @@ article.album {
     position: relative;
     z-index: 10; }
 
-.post, article.page, article.audiotheme_video {
+.post, .post-bubble {
   -webkit-background-clip: padding;
   -webkit-background-clip: padding-box;
   -webkit-border-radius: 4px;
@@ -1130,37 +1132,37 @@ article.album {
   background: #fff;
   padding: 30px;
   margin-bottom: 30px; }
-  .post .feature-image, .post .video, article.page .feature-image, article.page .video, article.audiotheme_video .feature-image, article.audiotheme_video .video {
+  .post .feature-image, .post .video, .post-bubble .feature-image, .post-bubble .video {
     display: block;
     margin-bottom: 20px;
     text-align: center; }
-    .post .feature-image:hover, .post .video:hover, article.page .feature-image:hover, article.page .video:hover, article.audiotheme_video .feature-image:hover, article.audiotheme_video .video:hover {
+    .post .feature-image:hover, .post .video:hover, .post-bubble .feature-image:hover, .post-bubble .video:hover {
       background: none; }
-  .post h1, article.page h1, article.audiotheme_video h1 {
+  .post h1, .post-bubble h1 {
     font-size: 48px; }
-    .post h1 a, article.page h1 a, article.audiotheme_video h1 a {
+    .post h1 a, .post-bubble h1 a {
       text-decoration: none; }
-  .post p:last-child, article.page p:last-child, article.audiotheme_video p:last-child {
+  .post p:last-child, .post-bubble p:last-child {
     margin-bottom: 0; }
-  .post .postmeta, article.page .postmeta, article.audiotheme_video .postmeta {
+  .post .postmeta, .post-bubble .postmeta {
     border-top: 1px solid #cccccc;
     color: #444444;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 12px;
     margin-top: 15px;
     padding-top: 15px; }
-    .post .postmeta a, article.page .postmeta a, article.audiotheme_video .postmeta a {
+    .post .postmeta a, .post-bubble .postmeta a {
       color: #444444; }
-      .post .postmeta a:hover, article.page .postmeta a:hover, article.audiotheme_video .postmeta a:hover {
+      .post .postmeta a:hover, .post-bubble .postmeta a:hover {
         background: none; }
-        .post .postmeta a:hover span, article.page .postmeta a:hover span, article.audiotheme_video .postmeta a:hover span {
+        .post .postmeta a:hover span, .post-bubble .postmeta a:hover span {
           background: #ffe58d; }
-  .post .categories, article.page .categories, article.audiotheme_video .categories {
+  .post .categories, .post-bubble .categories {
     list-style: none;
     font-size: 11px;
     margin: 10px 0 0;
     padding: 0; }
-    .post .categories li, article.page .categories li, article.audiotheme_video .categories li {
+    .post .categories li, .post-bubble .categories li {
       display: inline;
       margin-right: 10px; }
 
@@ -1396,6 +1398,137 @@ textarea {
       -ms-transform: scale(1.05);
       -o-transform: scale(1.05);
       transform: scale(1.05); }
+
+.gallery-grid .gallery-thumb {
+  display: inline-block;
+  width: 23.77622%;
+  margin: 12px 12px 0 0; }
+  .gallery-grid .gallery-thumb:nth-child(4n) {
+    margin-right: 0; }
+  .gallery-grid .gallery-thumb img {
+    vertical-align: bottom; }
+
+#colorbox, #cboxOverlay, #cboxWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden; }
+
+#cboxOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+
+#cboxMiddleLeft, #cboxBottomLeft {
+  clear: left; }
+
+#cboxContent {
+  -webkit-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  -webkit-border-radius: 4px;
+  -moz-background-clip: padding;
+  -moz-background-clip: padding-box;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #444444;
+  position: relative;
+  padding: 10px; }
+
+#cboxLoadedContent {
+  overflow: auto; }
+
+#cboxTitle {
+  margin: 0; }
+
+#cboxLoadingOverlay, #cboxLoadingGraphic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow {
+  cursor: pointer; }
+
+.cboxPhoto {
+  float: left;
+  margin: auto;
+  border: 0;
+  display: block;
+  max-width: none; }
+
+.cboxIframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0; }
+
+#colorbox, #cboxContent, #cboxLoadedContent {
+  box-sizing: content-box; }
+
+#cboxOverlay {
+  background: rgba(0, 0, 0, 0.5); }
+
+#cboxContent {
+  background: #fff;
+  overflow: hidden; }
+
+.cboxIframe {
+  background: #fff; }
+
+#cboxError {
+  padding: 50px;
+  border: 1px solid #ccc; }
+
+#cboxLoadedContent {
+  margin-bottom: 20px; }
+
+#cboxTitle {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  color: #999; }
+
+#cboxCurrent {
+  display: none !important; }
+
+#cboxSlideshow {
+  position: absolute;
+  bottom: 8px;
+  right: 42px;
+  color: #6b6b6b; }
+
+#cboxPrevious {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  color: #6b6b6b; }
+
+#cboxNext {
+  position: absolute;
+  bottom: 8px;
+  left: 63px;
+  color: #6b6b6b; }
+
+#cboxLoadingOverlay {
+  background: white url(images/loading.gif) no-repeat center center; }
+
+#cboxClose {
+  position: absolute;
+  bottom: 8px;
+  right: 11px;
+  display: block;
+  color: #6b6b6b; }
 
 .ui-tabs-panel {
   zoom: 1; }

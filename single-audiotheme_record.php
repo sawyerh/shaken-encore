@@ -16,7 +16,7 @@
 
         $links = get_audiotheme_record_links( $post->ID );
     ?>
-        <section id="post-<?php the_ID(); ?>" <?php post_class( 'page page-wrap' ); ?>>
+        <section id="post-<?php the_ID(); ?>" <?php post_class( 'page page-wrap post-bubble' ); ?>>
             
             <header>
                 <?php if( has_post_thumbnail() ){ ?>

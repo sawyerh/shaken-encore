@@ -37,22 +37,11 @@ function shaken_theme_options(){
     	__( 'Logo', 'audiotheme' ), // label
     	$section, // section
     	array( 
-    		'description' => '<br>(300x150 max size)' 
-    	)
-    );
-    
-    $options->add_field( 
-    	'checkbox', 
-    	'round_logo', 
-    	__( 'Round logo', 'audiotheme' ), 
-    	$section, 
-    	array( 
-    		'field_label' => 'Turn the logo into a circle' 
+    		'description' => '<br>(300px max width)' 
     	)
     );
 
     // Homepage specific
-
     $options->add_field( 
     	'select', 
     	'home_audioplayer_record', 

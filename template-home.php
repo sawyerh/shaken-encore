@@ -7,7 +7,9 @@
 <?php get_header(); ?>
 
     <!-- Site title / Logo -->
-	<?php if(get_audiotheme_theme_option('logo')) { ?>
+    <?php if( has_post_thumbnail() ){ ?>
+        <span class="feature-image"><?php the_post_thumbnail(); ?></span>
+	<?php } else if(get_audiotheme_theme_option('logo')) { ?>
     	<img src="<?php echo get_audiotheme_theme_option('logo'); ?>" alt="<?php bloginfo( 'name' ); ?>" />
     <?php } else { ?>
 		<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
